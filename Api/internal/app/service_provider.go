@@ -3,12 +3,14 @@ package app
 import (
 	"Api/internal/config"
 	"Api/internal/domains/database"
+	"Api/internal/repository/answer"
 	"github.com/jmoiron/sqlx"
 	"log"
 )
 
 type ServiceProvider struct {
-	postgres *sqlx.DB
+	postgres         *sqlx.DB
+	answerRepository answer.Repository
 }
 
 func newServiceProvider() *ServiceProvider { return &ServiceProvider{} }
@@ -29,4 +31,12 @@ func (s *ServiceProvider) Postgres() *sqlx.DB {
 	}
 
 	return s.postgres
+}
+
+func (s *ServiceProvider) AnswerRepository() answer.Repository {
+	if s.answerRepository == nil {
+		s.answerRepository = answer.NewAnswerRepository(s.postgres)
+	}
+
+	return s.answerRepository
 }

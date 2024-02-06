@@ -1,5 +1,5 @@
 package models
 
 type Score struct {
-	Id int `db:"score_id" json:"id"`
+	Id int64 `db:"score_id" json:"id"`
 }

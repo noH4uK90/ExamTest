@@ -39,3 +39,5 @@ func NewApiConfiguration() (*ApiConfiguration, error) {
 		Port: values[envApiPort],
 	}, nil
 }
+
+func (cfg *ApiConfiguration) Address() string { return fmt.Sprintf("%s:%s", cfg.Host, cfg.Port) }

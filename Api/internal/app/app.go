@@ -2,9 +2,13 @@ package app
 
 import (
 	"Api/internal/config"
+	"Api/internal/controller/answer"
 	"context"
 	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
 	"log"
+	"net/http"
 )
 
 type App struct {
@@ -14,14 +18,46 @@ type App struct {
 func NewApp(ctx *context.Context) (*App, error) {
 	a := &App{}
 
+	err := a.initDeps(ctx)
+	if err != nil {
+		return nil, err
+	}
+
 	return a, nil
 }
 
 func (a *App) Run() error {
+	cfg, err := config.NewApiConfiguration()
+	if err != nil {
+		return err
+	}
+
+	r, err := initRouter(a)
+	if err != nil {
+		return err
+	}
+
+	err = http.ListenAndServe(cfg.Address(), r)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (a *App) initDeps(ctx *context.Context) error {
+	inits := []func(*context.Context) error{
+		a.initEnv,
+		a.initServiceProvider,
+	}
+
+	for _, f := range inits {
+		err := f(ctx)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
 
@@ -40,6 +76,18 @@ func (a *App) initServiceProvider(_ *context.Context) error {
 
 func initRouter(a *App) (*chi.Mux, error) {
 	r := chi.NewRouter()
-	//postgres := a.serviceProvider.Postgres()
+	r.Use(middleware.Logger)
+	r.Use(cors.Handler(cors.Options{
+		AllowedOrigins:   []string{"https://*", "http://*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: false,
+		MaxAge:           300,
+	}))
+	postgres := a.serviceProvider.Postgres()
+
+	answer.NewAnswerController().Init(r, a.serviceProvider.AnswerRepository(), postgres)
+
 	return r, nil
 }
