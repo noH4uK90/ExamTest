@@ -26,7 +26,7 @@ func NewAnswerRepository(db *sqlx.DB) *AnswerRepository {
 func (r *AnswerRepository) GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error) {
 	var answer models.Answer
 
-	err := tx.Get(answer, `SELECT * FROM answer WHERE "answer_id" = $1`, Id)
+	err := tx.Get(&answer, `SELECT * FROM answer WHERE "answer_id" = $1`, Id)
 	if errors.Is(err, sql.ErrNoRows) {
 		return nil, middleware.NotFound
 	}
@@ -41,7 +41,7 @@ func (r *AnswerRepository) GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error
 func (r *AnswerRepository) Get(tx *sqlx.Tx) (*[]models.Answer, error) {
 	var answers []models.Answer
 
-	err := tx.Get(answers, `SELECT * FROM answer ORDER BY "answer_id"`)
+	err := tx.Select(&answers, `SELECT * FROM answer ORDER BY "answer_id"`)
 	if errors.Is(err, sql.ErrNoRows) {
 		return nil, middleware.NotFound
 	}

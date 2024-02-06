@@ -12,7 +12,7 @@ type AnswerController struct{}
 
 func NewAnswerController() *AnswerController { return &AnswerController{} }
 
-func (c *AnswerController) Init(r *chi.Mux, rep answer.Repository, db *sqlx.DB) {
+func (c *AnswerController) Init(r chi.Router, rep answer.Repository, db *sqlx.DB) {
 	r.Route("/answer", func(r chi.Router) {
 		r.Get("/", get_list.GetAnswers(db, rep))
 		r.Get("/{id}", get.GetAnswer(db, rep))

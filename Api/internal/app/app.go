@@ -87,7 +87,12 @@ func initRouter(a *App) (*chi.Mux, error) {
 	}))
 	postgres := a.serviceProvider.Postgres()
 
-	answer.NewAnswerController().Init(r, a.serviceProvider.AnswerRepository(), postgres)
+	r.Route("/api", func(r chi.Router) {
+		r.Get("/new", func(writer http.ResponseWriter, request *http.Request) {
+			writer.Write([]byte("hello"))
+		})
+		answer.NewAnswerController().Init(r, a.serviceProvider.AnswerRepository(), postgres)
+	})
 
 	return r, nil
 }
