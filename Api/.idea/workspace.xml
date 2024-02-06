@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/app/app.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/app/service_provider.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/config/postgres.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/domains/database/postgres.go" afterDir="false" />
+    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="Add TestType model">
+      <change afterPath="$PROJECT_DIR$/internal/domains/models/answer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/domains/models/question.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/domains/models/question_type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/domains/models/score.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,11 @@
   </component>
   <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="KubernetesApiProvider">{
@@ -49,9 +55,9 @@
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/noh4uk&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/noh4uk/Documents/projects/ExamTest/Api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -90,10 +96,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Add TestType model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add TestType model" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
