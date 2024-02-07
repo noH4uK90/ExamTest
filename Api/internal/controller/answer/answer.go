@@ -1,6 +1,8 @@
 package answer
 
 import (
+	"Api/internal/controller/answer/handler/create"
+	"Api/internal/controller/answer/handler/delete"
 	"Api/internal/controller/answer/handler/get"
 	"Api/internal/controller/answer/handler/get_list"
 	"Api/internal/repository/answer"
@@ -16,5 +18,7 @@ func (c *AnswerController) Init(r chi.Router, rep answer.Repository, db *sqlx.DB
 	r.Route("/answer", func(r chi.Router) {
 		r.Get("/", get_list.GetAnswers(db, rep))
 		r.Get("/{id}", get.GetAnswer(db, rep))
+		r.Post("/", create.CreateAnswer(db, rep))
+		r.Delete("/{id}", delete.DeleteAnswer(db, rep))
 	})
 }

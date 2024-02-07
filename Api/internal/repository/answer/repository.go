@@ -11,6 +11,8 @@ import (
 type Repository interface {
 	GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error)
 	Get(tx *sqlx.Tx) (*[]models.Answer, error)
+	Create(tx *sqlx.Tx, answer models.Answer) (*int64, error)
+	Delete(tx *sqlx.Tx, Id int64) error
 }
 
 type AnswerRepository struct {
@@ -51,4 +53,32 @@ func (r *AnswerRepository) Get(tx *sqlx.Tx) (*[]models.Answer, error) {
 	}
 
 	return &answers, nil
+}
+
+func (r *AnswerRepository) Create(tx *sqlx.Tx, answer models.Answer) (*int64, error) {
+	var id int64
+
+	err := tx.QueryRowx(`INSERT INTO answer("text", "is_right") VALUES($1, $2) RETURNING "answer_id"`, answer.Text, answer.IsRight).Scan(&id)
+	if err != nil {
+		tx.Rollback()
+		return nil, err
+	}
+
+	err = tx.Commit()
+	if err != nil {
+		tx.Rollback()
+		return nil, err
+	}
+
+	return &id, nil
+}
+
+func (r *AnswerRepository) Delete(tx *sqlx.Tx, Id int64) error {
+	res := tx.MustExec(`DELETE FROM answer WHERE "answer_id" = $1`, Id)
+	_, err := res.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
