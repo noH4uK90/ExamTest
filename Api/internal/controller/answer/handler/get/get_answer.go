@@ -23,7 +23,7 @@ func (q *getAnswerQuery) Validate() error {
 }
 
 func fromRequest(r *http.Request) (*getAnswerQuery, error) {
-	request := &getAnswerQuery{}
+	q := &getAnswerQuery{}
 
 	param := chi.URLParam(r, "id")
 	id, err := strconv.ParseInt(param, 10, 64)
@@ -31,9 +31,9 @@ func fromRequest(r *http.Request) (*getAnswerQuery, error) {
 		return nil, middleware.BadRequest
 	}
 
-	request.Id = id
+	q.Id = id
 
-	return request, nil
+	return q, nil
 }
 
 func GetAnswer(db *sqlx.DB, rep answer.Repository) http.HandlerFunc {

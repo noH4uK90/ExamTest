@@ -23,7 +23,7 @@ func (q *createAnswerQuery) Validate() error {
 }
 
 func fromRequest(r *http.Request) (*createAnswerQuery, error) {
-	request := &createAnswerQuery{}
+	q := &createAnswerQuery{}
 	var answer models.Answer
 
 	err := json.NewDecoder(r.Body).Decode(&answer)
@@ -32,8 +32,8 @@ func fromRequest(r *http.Request) (*createAnswerQuery, error) {
 	}
 	fmt.Println(answer)
 
-	request.Answer = answer
-	return request, nil
+	q.Answer = answer
+	return q, nil
 }
 
 func CreateAnswer(db *sqlx.DB, rep answer.Repository) http.HandlerFunc {

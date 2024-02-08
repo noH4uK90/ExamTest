@@ -12,6 +12,7 @@ type Repository interface {
 	GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error)
 	Get(tx *sqlx.Tx) (*[]models.Answer, error)
 	Create(tx *sqlx.Tx, answer models.Answer) (*int64, error)
+	Update(tx *sqlx.Tx, Id int64, answer models.Answer) error
 	Delete(tx *sqlx.Tx, Id int64) error
 }
 
@@ -71,6 +72,22 @@ func (r *AnswerRepository) Create(tx *sqlx.Tx, answer models.Answer) (*int64, er
 	}
 
 	return &id, nil
+}
+
+func (r *AnswerRepository) Update(tx *sqlx.Tx, Id int64, answer models.Answer) error {
+	_, err := tx.Queryx(`UPDATE answer SET "text"=$1, "is_right"=$2 WHERE "answer_id"=$3`, Id, answer.Text, answer.IsRight)
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	err = tx.Commit()
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	return nil
 }
 
 func (r *AnswerRepository) Delete(tx *sqlx.Tx, Id int64) error {
