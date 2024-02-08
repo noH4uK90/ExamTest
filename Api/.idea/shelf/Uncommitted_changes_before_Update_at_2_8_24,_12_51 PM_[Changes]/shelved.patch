@@ -1,0 +1,139 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"d0db5269-6b31-4162-96a7-edb78d578f1b\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/.env.local\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/internal/app/app.go\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/internal/app/service_provider.go\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/internal/config/postgres.go\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/internal/domains/database/postgres.go\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Go File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"GOROOT\" url=\"file:///opt/homebrew/opt/go/libexec\" />\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\n  </component>\n  <component name=\"KubernetesApiProvider\">{\n  &quot;isMigrated&quot;: true\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 1\n}</component>\n  <component name=\"ProjectId\" id=\"2buTKh8q6WhVcbADM5iynrEUt9T\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,\n    &quot;Go Build.go build Api/cmd.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/noh4uk&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;go.sdk&quot;\n  },\n  &quot;keyToStringList&quot;: {\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\n      &quot;yaml&quot;\n    ]\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/internal/config\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"go build Api/cmd\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\" nameIsGenerated=\"true\">\n      <module name=\"Api\" />\n      <working_directory value=\"$PROJECT_DIR$\" />\n      <kind value=\"DIRECTORY\" />\n      <package value=\"Api\" />\n      <directory value=\"$PROJECT_DIR$/cmd\" />\n      <filePath value=\"$PROJECT_DIR$/../Api|$PROJECT_DIR$/cmd/main.go\" />\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-gosdk-e58f7cfedaf7-155fe4b6e3a0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-233.14015.113\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <ignored-roots>\n      <path value=\"$PROJECT_DIR$\" />\n    </ignored-roots>\n  </component>\n  <component name=\"VgoProject\">\n    <settings-migrated>true</settings-migrated>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 923ae11df77cdad96fe2b2f2b8ef7c1a96302da3)
++++ b/.idea/workspace.xml	(date 1707385881072)
+@@ -4,12 +4,8 @@
+     <option name="autoReloadType" value="ALL" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/internal/app/app.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/internal/app/service_provider.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/internal/config/postgres.go" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/internal/domains/database/postgres.go" afterDir="false" />
++    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="Add create and delete answer route">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -25,11 +21,23 @@
+   </component>
+   <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$/.." value="dev" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="KubernetesApiProvider">{
+   &quot;isMigrated&quot;: true
+ }</component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 1
+ }</component>
+@@ -39,30 +47,38 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+-    &quot;Go Build.go build Api/cmd.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/Users/noh4uk&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;go.sdk&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultGoTemplateProperty": "Go File",
++    "Go Build.go build Api/cmd.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.go.formatter.settings.were.checked": "true",
++    "RunOnceActivity.go.migrated.go.modules.settings": "true",
++    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
++    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
++    "git-widget-placeholder": "main",
++    "go.import.settings.migrated": "true",
++    "last_opened_file_path": "/Users/noh4uk/Documents/projects/ExamTest/Api",
++    "node.js.detected.package.eslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "settings.editor.selected.configurable": "database.query.execution"
+   },
+-  &quot;keyToStringList&quot;: {
+-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+-      &quot;yaml&quot;
++  "keyToStringList": {
++    "DatabaseDriversLRU": [
++      "postgresql"
++    ],
++    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
++      "yaml"
+     ]
+   }
+-}</component>
++}]]></component>
++  <component name="QodanaReportsService">
++    <option name="descriptions">
++      <ReportDescription localRun="true" path="/private/var/folders/bg/6t7skyvx2h72mk3228x1j72w0000gn/T/qodana_output/qodana.sarif.json" reportGuid="74e32cbf-5d1b-4dc1-995b-508614dd9f99" reportId="Api/qodana/2024-02-06" />
++    </option>
++  </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/internal/config" />
+@@ -89,11 +105,29 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <ignored-roots>
+       <path value="$PROJECT_DIR$" />
+     </ignored-roots>
++    <MESSAGE value="Add TestType model" />
++    <MESSAGE value="Add basic test models" />
++    <MESSAGE value="Add basic inits" />
++    <MESSAGE value="Add answer controller" />
++    <MESSAGE value="Fix answer controller" />
++    <MESSAGE value="Add create and delete answer route" />
++    <option name="LAST_COMMIT_MESSAGE" value="Add create and delete answer route" />
+   </component>
+   <component name="VgoProject">
+     <settings-migrated>true</settings-migrated>
