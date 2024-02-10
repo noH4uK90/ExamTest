@@ -2,7 +2,7 @@ package app
 
 import (
 	"Api/internal/config"
-	"Api/internal/controller/answer"
+	"Api/internal/controller"
 	"context"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -88,7 +88,7 @@ func initRouter(a *App) (*chi.Mux, error) {
 	postgres := a.serviceProvider.Postgres()
 
 	r.Route("/api", func(r chi.Router) {
-		answer.NewAnswerController().Init(r, a.serviceProvider.AnswerRepository(), postgres)
+		controller.NewAnswerController().Init(r, a.serviceProvider.AnswerService(), postgres)
 	})
 
 	return r, nil

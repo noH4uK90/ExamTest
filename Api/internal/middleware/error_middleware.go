@@ -10,6 +10,7 @@ var errorCodes = map[ErrorCode]int{
 	unauthorized:   http.StatusUnauthorized,
 	notFound:       http.StatusNotFound,
 	internalServer: http.StatusInternalServerError,
+	isExist:        http.StatusConflict,
 }
 
 type appHandler func(w http.ResponseWriter, r *http.Request) error
@@ -23,8 +24,7 @@ func ErrorMiddleware(h appHandler) http.HandlerFunc {
 				appErr = InternalServer
 			}
 
-			writer.WriteHeader(errorCodes[appErr.Code])
-			_, _ = writer.Write(appErr.Marshal())
+			http.Error(writer, appErr.Error(), errorCodes[appErr.Code])
 		}
 	}
 }

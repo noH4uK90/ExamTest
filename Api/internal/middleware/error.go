@@ -7,6 +7,7 @@ const (
 	unauthorized   ErrorCode = "UNAUTHORIZED"
 	notFound       ErrorCode = "NOT_FOUND"
 	internalServer ErrorCode = "INTERNAL_SERVER_ERROR"
+	isExist        ErrorCode = "IS_EXIST"
 )
 
 var (
@@ -14,6 +15,7 @@ var (
 	Unauthorized   = NewAppError("Unauthorized.", unauthorized, nil)
 	NotFound       = NewAppError("Not found.", notFound, nil)
 	InternalServer = NewAppError("Uknown error.", internalServer, nil)
+	IsExist        = NewAppError("This entity already exists", isExist, nil)
 )
 
 type ErrorCode string
