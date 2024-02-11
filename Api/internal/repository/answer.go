@@ -1,19 +1,21 @@
 package repository
 
 import (
-	"Api/internal/domains/models"
-	"Api/internal/middleware"
 	"database/sql"
 	"errors"
+
+	"Api/internal/domains/models"
+	"Api/internal/middleware"
+
 	"github.com/jmoiron/sqlx"
 )
 
 type AnswerRepository interface {
-	GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error)
+	GetById(tx *sqlx.Tx, ID int64) (*models.Answer, error)
 	Get(tx *sqlx.Tx) (*[]models.Answer, error)
 	Create(tx *sqlx.Tx, answer models.Answer) (*int64, error)
-	Update(tx *sqlx.Tx, Id int64, answer models.Answer) error
-	Delete(tx *sqlx.Tx, Id int64) error
+	Update(tx *sqlx.Tx, ID int64, answer models.Answer) error
+	Delete(tx *sqlx.Tx, ID int64) error
 }
 
 type AnswerService struct {
@@ -26,10 +28,10 @@ func NewAnswerService(db *sqlx.DB) *AnswerService {
 	}
 }
 
-func (r *AnswerService) GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error) {
+func (s *AnswerService) GetById(tx *sqlx.Tx, ID int64) (*models.Answer, error) {
 	var answer models.Answer
 
-	err := tx.Get(&answer, `SELECT * FROM answer WHERE "answer_id" = $1`, Id)
+	err := tx.Get(&answer, `SELECT * FROM answer WHERE "answer_id" = $1`, ID)
 	if errors.Is(err, sql.ErrNoRows) {
 		return nil, middleware.NotFound
 	}
@@ -45,7 +47,7 @@ func (r *AnswerService) GetById(tx *sqlx.Tx, Id int64) (*models.Answer, error) {
 	return &answer, nil
 }
 
-func (r *AnswerService) Get(tx *sqlx.Tx) (*[]models.Answer, error) {
+func (s *AnswerService) Get(tx *sqlx.Tx) (*[]models.Answer, error) {
 	var answers []models.Answer
 
 	err := tx.Select(&answers, `SELECT * FROM answer ORDER BY "answer_id"`)
@@ -64,13 +66,16 @@ func (r *AnswerService) Get(tx *sqlx.Tx) (*[]models.Answer, error) {
 	return &answers, nil
 }
 
-func (r *AnswerService) Create(tx *sqlx.Tx, answer models.Answer) (*int64, error) {
+func (s *AnswerService) Create(tx *sqlx.Tx, answer models.Answer) (*int64, error) {
 	var id int64
-	var ans models.Answer
+	var isExists bool
 
-	err := tx.Get(&ans, `SELECT * FROM answer WHERE "text"=$1`, answer.Text)
-	if !errors.Is(err, sql.ErrNoRows) {
+	err := tx.Get(&isExists, `SELECT EXISTS(SELECT * FROM answer WHERE "text"=$1)`, answer.Text)
+	if isExists == true {
 		return nil, middleware.IsExist
+	}
+	if err != nil {
+		return nil, err
 	}
 
 	err = tx.QueryRowx(`INSERT INTO answer("text", "is_right") VALUES($1, $2) RETURNING "answer_id"`, answer.Text, answer.IsRight).Scan(&id)
@@ -87,9 +92,9 @@ func (r *AnswerService) Create(tx *sqlx.Tx, answer models.Answer) (*int64, error
 	return &id, nil
 }
 
-func (r *AnswerService) Update(tx *sqlx.Tx, Id int64, answer models.Answer) error {
+func (s *AnswerService) Update(tx *sqlx.Tx, ID int64, answer models.Answer) error {
 
-	_, err := tx.Queryx(`UPDATE answer SET "text"=$1, "is_right"=$2 WHERE "answer_id"=$3`, answer.Text, answer.IsRight, Id)
+	_, err := tx.Queryx(`UPDATE answer SET "text"=$1, "is_right"=$2 WHERE "answer_id"=$3`, answer.Text, answer.IsRight, ID)
 	if err != nil {
 		tx.Rollback()
 		return err
@@ -103,8 +108,8 @@ func (r *AnswerService) Update(tx *sqlx.Tx, Id int64, answer models.Answer) erro
 	return nil
 }
 
-func (r *AnswerService) Delete(tx *sqlx.Tx, Id int64) error {
-	res := tx.MustExec(`DELETE FROM answer WHERE "answer_id" = $1`, Id)
+func (s *AnswerService) Delete(tx *sqlx.Tx, ID int64) error {
+	res := tx.MustExec(`DELETE FROM answer WHERE "answer_id" = $1`, ID)
 	_, err := res.RowsAffected()
 	if err != nil {
 		tx.Rollback()

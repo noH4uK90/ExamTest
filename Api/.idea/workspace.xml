@@ -4,31 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="Some rework models">
-      <change afterPath="$PROJECT_DIR$/internal/controller/answer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="Rework answer controller">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907/storage_v2/_src_/database/exam_test_db.K9sHvQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907/storage_v2/_src_/database/exam_test_db.K9sHvQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/app/service_provider.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/app/service_provider.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/answer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/handler/create/create_answer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/handler/delete/delete_answer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/handler/get/get_answer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/handler/get_list/get_answer_list.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/answer/handler/update/update_answer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/answer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/answer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/question.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/question.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/question_answer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/question_answer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/question_type.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/question_type.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/score.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/score.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/controller/answer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/controller/answer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/domains/database/postgres.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/database/postgres.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/domains/models/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/test_question.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/test_question.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/test_type.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/test_type.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/test_types.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/test_types.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/middleware/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/answer/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/answer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/repository/answer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/answer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +53,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;Go Build.go build Api/cmd.executor&quot;: &quot;Run&quot;,
+    &quot;Go Build.go build answer.go.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
@@ -148,11 +135,22 @@
         </entry>
       </map>
     </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Rework answer controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework answer controller" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

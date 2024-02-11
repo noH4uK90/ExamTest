@@ -1,14 +1,16 @@
 package app
 
 import (
+	"context"
+	"log"
+	"net/http"
+
 	"Api/internal/config"
 	"Api/internal/controller"
-	"context"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
-	"log"
-	"net/http"
 )
 
 type App struct {
@@ -89,6 +91,8 @@ func initRouter(a *App) (*chi.Mux, error) {
 
 	r.Route("/api", func(r chi.Router) {
 		controller.NewAnswerController().Init(r, a.serviceProvider.AnswerService(), postgres)
+		controller.NewTestController().Init(r, a.serviceProvider.TestService(), postgres)
+		controller.NewTestTypeController().Init(r, a.serviceProvider.TestTypeService(), postgres)
 	})
 
 	return r, nil

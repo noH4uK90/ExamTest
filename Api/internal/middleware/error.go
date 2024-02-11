@@ -1,6 +1,9 @@
 package middleware
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 const (
 	badRequest     ErrorCode = "BAD_REQUEST"
@@ -21,7 +24,7 @@ var (
 type ErrorCode string
 
 type AppError struct {
-	Err     error  `json:"-"`
+	Err     error  `json:"error"`
 	Message string `json:"message"`
 	Code    ErrorCode
 }
@@ -29,7 +32,7 @@ type AppError struct {
 func (e *AppError) Error() string {
 	message := e.Message
 	if e.Err != nil {
-		message = e.Err.Error()
+		message = fmt.Sprintf("%s \n %s", e.Message, e.Err)
 	}
 	return message
 }
@@ -51,5 +54,13 @@ func NewAppError(msg string, code ErrorCode, err error) *AppError {
 		Err:     err,
 		Message: msg,
 		Code:    code,
+	}
+}
+
+func (e *AppError) AddError(err error) *AppError {
+	return &AppError{
+		Err:     err,
+		Message: e.Message,
+		Code:    e.Code,
 	}
 }

@@ -42,22 +42,15 @@ func getAnswers(db *sqlx.DB, rep repository.AnswerRepository) http.HandlerFunc {
 }
 
 func getAnswer(db *sqlx.DB, rep repository.AnswerRepository) http.HandlerFunc {
-
-	type Request struct {
-		ID int64
-	}
-
 	return middleware.ErrorMiddleware(func(w http.ResponseWriter, r *http.Request) error {
-		var req Request
 		param := chi.URLParam(r, "id")
 		id, err := strconv.ParseInt(param, 10, 64)
 		if err != nil {
 			return middleware.BadRequest
 		}
-		req.ID = id
 
 		tx := db.MustBegin()
-		answer, err := rep.GetById(tx, req.ID)
+		answer, err := rep.GetById(tx, id)
 		if err != nil {
 			return err
 		}
@@ -76,12 +69,12 @@ func createAnswer(db *sqlx.DB, rep repository.AnswerRepository) http.HandlerFunc
 	return middleware.ErrorMiddleware(func(w http.ResponseWriter, r *http.Request) error {
 		var req Request
 		if err := render.DecodeJSON(r.Body, &req); err != nil {
-			http.Error(w, err.Error(), http.StatusBadRequest)
 			return middleware.BadRequest
 		}
 
 		if err := validator.New().Struct(req.answer); err != nil {
-			return middleware.BadRequest
+			vErr := err.(validator.ValidationErrors)
+			return middleware.BadRequest.AddError(vErr)
 		}
 
 		tx := db.MustBegin()
@@ -117,7 +110,8 @@ func updateAnswer(db *sqlx.DB, rep repository.AnswerRepository) http.HandlerFunc
 		}
 
 		if err := validator.New().Struct(req.answer); err != nil {
-			return middleware.BadRequest
+			vErr := err.(validator.ValidationErrors)
+			return middleware.BadRequest.AddError(vErr)
 		}
 
 		tx := db.MustBegin()
