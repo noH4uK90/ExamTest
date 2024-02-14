@@ -4,38 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="Add test and test type controllers">
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS.xcodeproj/project.xcworkspace/xcuserdata/noh4uk.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS.xcodeproj/xcuserdata/noh4uk.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/ContentView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/DI/Resolver.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Item.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Models/Answer.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Models/Question.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Models/Test.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Network/NetworkManager.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Services/DataTransferService.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Services/NetworkService.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/ViewModels/TestViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/Views/TestView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOS/iOS/iOSApp.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907/storage_v2/_src_/database/exam_test_db.K9sHvQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/947fbdf0-4727-45f7-b6d4-374030c53907/storage_v2/_src_/database/exam_test_db.K9sHvQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/controller/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/controller/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domains/models/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domains/models/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/middleware/error_middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/error_middleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="d0db5269-6b31-4162-96a7-edb78d578f1b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.local" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/app/app.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/app/service_provider.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/config/postgres.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/domains/database/postgres.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +25,6 @@
   </component>
   <component name="GOROOT" url="file:///opt/homebrew/opt/go/libexec" />
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="dev" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="KubernetesApiProvider">{
@@ -74,14 +43,13 @@
   &quot;keyToString&quot;: {
     &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;Go Build.go build Api/cmd.executor&quot;: &quot;Run&quot;,
-    &quot;Go Build.go build answer.go.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;features-test&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/noh4uk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -97,9 +65,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/internal/controller" />
-      <recent name="$PROJECT_DIR$/internal/repository" />
-      <recent name="$PROJECT_DIR$/internal/controller/answer_controller" />
       <recent name="$PROJECT_DIR$/internal/config" />
     </key>
   </component>
@@ -125,54 +90,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/main" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/dev" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="main" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Rework answer controller" />
-    <MESSAGE value="Add test and test type controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test and test type controllers" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
