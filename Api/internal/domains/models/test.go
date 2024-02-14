@@ -6,15 +6,14 @@ type Test struct {
 }
 
 type TestResponse struct {
-	ID      int64      `json:"id"`
-	Name    string     `json:"name"`
-	Answers []Answer   `json:"answers"`
-	Types   []TestType `json:"types"`
+	ID        int64      `json:"id"`
+	Name      string     `json:"name"`
+	Questions []Question `json:"questions"`
+	Types     []TestType `json:"types"`
 }
 
 type TestRequest struct {
-	ID      int64   `json:"id"`
-	Name    string  `json:"name"`
-	Answers []int64 `json:"answers"`
-	Types   []int64 `json:"types"`
+	Name        string `json:"name"`
+	QuestionIDs []int  `json:"questionIDs"`
+	TypeIDs     []int  `json:"typeIDs"`
 }

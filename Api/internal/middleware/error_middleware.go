@@ -18,6 +18,8 @@ type appHandler func(w http.ResponseWriter, r *http.Request) error
 func ErrorMiddleware(h appHandler) http.HandlerFunc {
 	return func(writer http.ResponseWriter, request *http.Request) {
 		var appErr *AppError
+		writer.Header().Set("Content-Type", "application/json; charset=utf-8")
+		writer.Header().Set("Content-Disposition", "inline")
 		err := h(writer, request)
 		if err != nil {
 			if !errors.As(err, &appErr) {
